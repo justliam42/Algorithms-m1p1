@@ -11,14 +11,15 @@ def inside(points, target_x, target_y):
         # make one of the sides continuous so that
         # one collision occurs on the edge case of hitting a vertex
         if ((target_y >= yi1 and target_y < yi2) or 
-            (target_y >= yi2 and target_y < y_i)):
+            (target_y >= yi2 and target_y < yi1)):
             dx = xi2 - xi1
-            dy = yi1 - yi2
+            dy = yi2 - yi1
             x = xi1 + (target_y - yi1) * (dx / dy)
 
-            if x > target_x():
+            if x > target_x:
                 collisions += 1
 
     # iff the horizontal line from the point collides with an odd number
     # of lines on the shape, than we are in the shape
     return collisions % 2 == 1
+
