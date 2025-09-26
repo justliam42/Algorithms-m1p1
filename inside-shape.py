@@ -16,7 +16,7 @@ def inside(points, target_x, target_y):
             dy = yi1 - yi2
             x = xi1 + (target_y - yi1) * (dx / dy)
 
-            if xi1 < target_x():
+            if x > target_x():
                 collisions += 1
 
     # iff the horizontal line from the point collides with an odd number
